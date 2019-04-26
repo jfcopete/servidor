@@ -1,0 +1,2 @@
+b'gAAAAABcwjw-z-E9tpkBZ0JmhHO5VcuksYzbiQT7ySmGUpYHreR5xJxMKFhR8-mHFm4nIJrlwDMEDP3HRNlCRsIOJEUdoSmXfYwccFRungtW5mzPyQ9o3Qo=' DECRIPTADO: {"username":"example"} 
+b'gAAAAABcwj0h9EW6JnRh2-JSbb1WBG2e2z6pKIqYUOg1LipuSu7pEmMISZFWNtOBr77rjA9m1cm02EM6BDcI9GvcDjNEyKEm5VylRaas5birLQmrlWk_aFw=' DECRIPTADO: {"username":"example"} 
