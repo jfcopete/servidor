@@ -17,9 +17,12 @@ def recibir():
 		texto = request.data
 		llave = leerLlave()
 		decrypt = decriptar(texto, llave)
+		x = decrypt.split()
+		if x[1] != hash(x[0]):
+			return 'NO HUBO INTEGRIDAD DE LOS DATOS'
 		with open("recibido.txt", "a") as f:
-			f.write(str(texto)+' DECRIPTADO: '+str(decrypt)+' \n')
-		return str(decrypt)
+			f.write(str(texto)+' DECRIPTADO: '+str(x[0])+" digest: "+str(x[1])+' \n')
+		return str(x[0])+" digest: "+str(x[1])
 
 def leerLlave():
 	file = open('key.key', 'r')
@@ -35,9 +38,10 @@ def encriptar():
 	else:
 		llave = leerLlave()
 		mens = request.data
+		hs = hash(mens)
 		print(mens)
 		f = Fernet(llave)
-		cifrado = f.encrypt(mens)
+		cifrado = f.encrypt(mens+" "+hs)
 		return str(cifrado)
 
 def decriptar(mensajeCifrado, llave):
