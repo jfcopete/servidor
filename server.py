@@ -17,7 +17,6 @@ def recibir():
 		texto = request.data
 		llave = leerLlave()
 		decrypt = decriptar(texto, llave)
-		x = decrypt.split()
 		with open("recibido.txt", "a") as f:
 			f.write(str(texto)+' DECRIPTADO: '+str(decrypt)+' \n')
 		return str(decrypt)
@@ -36,7 +35,6 @@ def encriptar():
 	else:
 		llave = leerLlave()
 		mens = request.data
-		hs = hash(mens)
 		print(mens)
 		f = Fernet(llave)
 		cifrado = f.encrypt(mens)
